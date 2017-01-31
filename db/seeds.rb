@@ -6,7 +6,6 @@ require 'faker'
     email: Faker::Internet.email,
     password: 'password'
   )
-  user.skip_confirmation!
   user.save!
 end
 
@@ -14,12 +13,18 @@ tyler = User.create!(
   email: 'tyler.cooper91@gmail.com',
   password: 'password'
 )
-
-tyler.skip_confirmation!
 tyler.save!
 
 users = User.all
 puts "#{User.count} users created"
+
+10.times do
+  restaurant = Restaurant.create!(
+    title: Faker::Food.ingredient
+  )
+end
+
+restaurants = Restaurant.all
 
 # # Create items
 # 25.times do

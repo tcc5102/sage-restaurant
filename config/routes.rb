@@ -3,8 +3,10 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
+      get "restaurants/index" => "restaurants#index"
       # go to user show page upon sign in
       root 'users#show', as: :authenticated_root
+
     end
 
     unauthenticated do
@@ -14,6 +16,6 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show] do
-    resources :items, only: [:create, :destroy]
+    # resources :restaurants, only: [:create, :destroy]
   end
 end
