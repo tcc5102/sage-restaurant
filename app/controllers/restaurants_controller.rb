@@ -19,6 +19,14 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def destroy
+    @user = current_user
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant.destroy
+    redirect_to restaurants_index_path
+  end
+
+
   def edit
     @restaurant = Restaurant.find(params[:id])
   end

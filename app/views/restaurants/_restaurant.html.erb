@@ -1,5 +1,10 @@
 <% @restaurants.each do |restaurant| %>
   <p><%= restaurant.title %>:   (<%= restaurant.rating %>) </br>Last Visit:  <%= restaurant.last_visit.strftime("%Y-%m-%d") %>
-    <%= link_to "Update", edit_user_restaurant_path(@user, restaurant) %>
+    <button type="button" class="btn btn-default">
+      <%= link_to "Update", edit_user_restaurant_path(@user, restaurant) %>
+    </button>
+    <button type="button" class="btn btn-default">
+      <%= link_to "Delete", user_restaurant_path(@user.id, restaurant), method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
+    </button>
   </p>
 <% end %>
