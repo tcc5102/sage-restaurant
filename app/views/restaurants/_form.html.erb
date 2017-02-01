@@ -4,8 +4,8 @@
     <%= f.text_field :title, class: 'field', placeholder: 'Add a new restaurant.' %></br>
   </div>
   <div class='field rate'>
-    <%= f.label :rating %>
-    <%= f.number_field :rating %>
+    <%= f.label :rating %>(1-5)
+    <%= f.number_field :rating, :style => "width:40px;" %>
   </div>
   <div class="actions">
     <%= f.submit 'Save', class: 'btn btn-success' %>
