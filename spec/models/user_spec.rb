@@ -12,7 +12,7 @@ RSpec.describe User, type: :model do
 
   describe "attributes" do
     it "should have name and email attributes" do
-      expect(user).to have_attributes(email: user.email)
+      expect(user).to have_attributes(email: "user@tester.com")
     end
   end
 end
