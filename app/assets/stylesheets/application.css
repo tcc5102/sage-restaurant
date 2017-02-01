@@ -16,3 +16,8 @@
 ul {
   list-style-type: none;
 }
+
+.add {
+  float: left;
+  padding-right: 10px;
+}
