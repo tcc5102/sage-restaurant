@@ -10,7 +10,7 @@ class RestaurantsController < ApplicationController
 
   def create
     @user = current_user
-    @restaurant = Restaurant.new(params.require(:restaurant).permit(:title, :rating))
+    @restaurant = Restaurant.new(params.require(:restaurant).permit(:title, :rating, :last_visit))
     @restaurant.user_id = @user.id
 
     if @restaurant.save
@@ -26,10 +26,9 @@ class RestaurantsController < ApplicationController
   def update
     @restaurant = Restaurant.find(params[:id])
     @restaurant.assign_attributes(restaurant_params)
-    p @restaurant
     if @restaurant.save
       flash[:notice] = "Restaurant was updated."
-      redirect_to :back
+      redirect_to restaurants_index_path
     else
       flash.now[:alert] = "There was an error updating the restaurant. Please try again."
       redirect_to :back
@@ -37,6 +36,6 @@ class RestaurantsController < ApplicationController
   end
 
   def restaurant_params
-    params.require(:restaurant).permit(:title, :rating)
+    params.require(:restaurant).permit(:title, :rating, :last_visit)
   end
 end

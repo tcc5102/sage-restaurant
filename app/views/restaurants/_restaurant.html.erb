@@ -1,5 +1,5 @@
 <% @restaurants.each do |restaurant| %>
-  <p><%= restaurant.title %>:   (<%= restaurant.rating %>) </br>Last Visit:  <%= restaurant.updated_at.strftime("%Y-%m-%d") %>
-    <%= link_to "Edit", edit_user_restaurant_path(@user, restaurant) %>
+  <p><%= restaurant.title %>:   (<%= restaurant.rating %>) </br>Last Visit:  <%= restaurant.last_visit.strftime("%Y-%m-%d") %>
+    <%= link_to "Update", edit_user_restaurant_path(@user, restaurant) %>
   </p>
 <% end %>
