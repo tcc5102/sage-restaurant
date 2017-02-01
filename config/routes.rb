@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:show] do
-    resources :restaurants, only: [:create]
+  resources :users do
+    resources :restaurants
   end
 end

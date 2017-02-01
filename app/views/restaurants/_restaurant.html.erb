@@ -1,3 +1,5 @@
-<div>
-  <h4><%= restaurant.title %></h4>
-</div>
+<% @restaurants.each do |restaurant| %>
+  <p><%= restaurant.title %>:   (<%= restaurant.rating %>) </br>Last Visit:  <%= restaurant.updated_at.strftime("%Y-%m-%d") %>
+    <%= link_to "Edit", edit_user_restaurant_path(@user, restaurant) %>
+  </p>
+<% end %>

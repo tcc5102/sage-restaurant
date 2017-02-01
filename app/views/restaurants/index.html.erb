@@ -1,6 +1,3 @@
 <h1>All Restaurants</h1>
-<% @restaurants.each do |restaurant| %>
-  <p><%= restaurant.title %>:   (<%= restaurant.rating %>) </br>Last Visit:  <%= restaurant.updated_at.strftime("%Y-%m-%d") %></p>
-<% end %>
-
+<%= render partial: 'restaurants/restaurant', locals: {user: @user} %>
 <%= render partial: 'restaurants/form', locals: {user: @user} %>
