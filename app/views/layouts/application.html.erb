@@ -19,7 +19,8 @@
     <ul>
       <li align="right">
         <% if user_signed_in? %>
-          <%= link_to 'Restaurants', restaurants_index_path, :class => 'navbar-link' %> |
+          <%= link_to 'Where to Eat', user_session_path, :class => 'navbar-link' %> |
+          <%= link_to 'Your Restaurants', restaurants_index_path, :class => 'navbar-link' %> |
           <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
           <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
         <% else %>

@@ -1,9 +1,4 @@
-<h1>All Restaurants</h1>
-<% @restaurants.each do |restaurant| %>
-  <p><%= restaurant.title %> rating</p>
-<% end %>
-
-<%= form_for [ @user, @user.restaurants.new ], remote: true do |f| %>
+<%= form_for [ user, user.restaurants.new ], remote: true do |f| %>
   <div class='form-group'>
     <%= f.label :Add %>
     <%= f.text_field :title, class: 'field', placeholder: 'Add a new restaurant.' %>
