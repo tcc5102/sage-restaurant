@@ -21,7 +21,8 @@ puts "#{User.count} users created"
 10.times do
   restaurant = Restaurant.create!(
     title: Faker::Food.ingredient,
-    rating: Faker::Number.between(1, 5)
+    rating: Faker::Number.between(1, 5),
+    user: users.sample
   )
 end
 

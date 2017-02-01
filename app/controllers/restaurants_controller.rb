@@ -26,10 +26,10 @@ class RestaurantsController < ApplicationController
   def update
     @restaurant = Restaurant.find(params[:id])
     @restaurant.assign_attributes(restaurant_params)
-
-    if @restaurant.update_attributes(params.require(:restaurant).permit(:title, :rating))
+    p @restaurant
+    if @restaurant.save
       flash[:notice] = "Restaurant was updated."
-      redirect_to restaurants_index_path
+      redirect_to :back
     else
       flash.now[:alert] = "There was an error updating the restaurant. Please try again."
       redirect_to :back
