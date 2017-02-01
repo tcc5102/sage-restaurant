@@ -1,6 +1,6 @@
 <h1>All Restaurants</h1>
 <% @restaurants.each do |restaurant| %>
-  <p><%= restaurant.title %>:   <%= restaurant.rating %> </br><%= date_select 'restaurant', 'last visit' %></p>
+  <p><%= restaurant.title %>:   (<%= restaurant.rating %>) </br>Last Visit:  <%= date_select 'restaurant', 'last visit' %></p>
 <% end %>
 
 <%= render partial: 'restaurants/form', locals: {user: @user} %>

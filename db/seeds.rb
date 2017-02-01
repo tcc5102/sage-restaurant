@@ -27,13 +27,5 @@ end
 
 restaurants = Restaurant.all
 
-# # Create items
-# 25.times do
-#   Item.create!(
-#     user: users.sample,
-#     name: Faker::Lorem.sentence
-#   )
-# end
-# items = Item.all
-# puts "#{Item.count} items created"
+puts "#{Restaurant.count} restaurants created"
 puts "Seed finished"
