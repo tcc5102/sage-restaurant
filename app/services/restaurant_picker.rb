@@ -20,14 +20,16 @@ class RestaurantPicker
   end
 
   def choose_oldest_and_best(restaurants)
-    pick = []
-    restaurants.each do |restaurant|
-      if (restaurants.count > 0) && (restaurant.rating > 2) && (restaurant.last_visit < restaurants.last.last_visit)
-        pick << restaurant
-      end
-    end
-    pick.sample
+    picks = restaurants
+      .sort_by { |restaurant| restaurant.last_visit }
+      .select  { |restaurant| restaurant if qualified(restaurant) }
+    picks.first
   end
+
+  private
+    def qualified(restaurant)
+      (restaurant.rating > 2)
+    end
 end
 
 #ignore most recent, unless only 1
