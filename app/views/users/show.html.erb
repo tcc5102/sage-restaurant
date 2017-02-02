@@ -4,5 +4,8 @@
     Eat at <%= @picked_restaurant.title %>
   <% else %>
     <p>Based on your restaurants I can't recommend anything!</p>
+    <p>If it has been less than a week since your last visit, or you rated it less than 3 stars, the restaurant will not show here.</p>
+    <p>Try out a new restaurant!</p>
+
   <% end %>
 </div>
