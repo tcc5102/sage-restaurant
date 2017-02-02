@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
   def index
     @user = current_user
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.all.sort_by{ |restaurant| restaurant.last_visit }
   end
 
   def show

@@ -23,16 +23,11 @@ class RestaurantPicker
     picks = restaurants
       .sort_by { |restaurant| restaurant.last_visit }
       .select  { |restaurant| restaurant if qualified(restaurant) }
-    picks.first
+    picks.sample
   end
 
   private
     def qualified(restaurant)
-      (restaurant.rating > 2)
+      (restaurant.last_visit < 1.week.ago && restaurant.rating > 2)
     end
 end
-
-#ignore most recent, unless only 1
-#ignore second most recent
-#choose highest rated
-#pick highest rated, exclude ratings of 1
