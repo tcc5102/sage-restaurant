@@ -1,25 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Add the restaurants you've been to, and rank them.
+Update with your last visit.
+The home page recommends which restaurant you should go to based on your last visit and rating.
 
-Things you may want to cover:
+Located at https://enigmatic-coast-25602.herokuapp.com/
 
-* Ruby version
+* Ruby 2.3.3
 
-* System dependencies
+* Rails 5.0.1
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# sage-restaurant
+* Devise used for sign in/out
