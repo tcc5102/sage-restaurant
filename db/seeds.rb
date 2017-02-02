@@ -18,11 +18,11 @@ tyler.save!
 users = User.all
 puts "#{User.count} users created"
 
-10.times do
+20.times do
   restaurant = Restaurant.create!(
     title: Faker::Food.ingredient,
     rating: Faker::Number.between(1, 5),
-    user: tyler,
+    user: users.sample,
     last_visit: Faker::Date.between(1.year.ago, Date.today)
   )
 end

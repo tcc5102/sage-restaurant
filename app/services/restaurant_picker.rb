@@ -10,7 +10,7 @@ class RestaurantPicker
   end
 
   def choose_newest(restaurants)
-    first = restaurants.first
+    first = restaurants.last
     restaurants.each do |restaurant|
       if restaurant.last_visit > first.last_visit
         first = restaurant
@@ -20,9 +20,9 @@ class RestaurantPicker
   end
 
   def choose_oldest_and_best(restaurants)
-    pick = restaurants.first
+    pick = restaurants.last
     restaurants.each do |restaurant|
-      if (restaurant.rating > 2) && (restaurant.last_visit < pick.last_visit)
+      if (restaurants.count > 0) && (restaurant.rating > 2) && (restaurant.last_visit < pick.last_visit)
         pick = restaurant
       end
     end
