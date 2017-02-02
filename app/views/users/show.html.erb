@@ -1,2 +1,2 @@
 <h1>Where to Eat</h1>
-<%= @restaurants.sample.title %>
+<%= RestaurantPicker.new.choose_oldest_and_best(@restaurants).title %>
