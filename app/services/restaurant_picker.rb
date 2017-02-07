@@ -8,7 +8,8 @@ class RestaurantPicker
   end
 
   private
-    def qualified(restaurant)
-      (restaurant.last_visit < 1.week.ago && restaurant.rating > 2)
-    end
+
+  def qualified(restaurant)
+    (restaurant.last_visit < 1.week.ago && restaurant.rating > 2)
+  end
 end
