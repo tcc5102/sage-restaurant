@@ -4,7 +4,7 @@
       <%= link_to "Update", edit_user_restaurant_path(@user, restaurant) %>
     </button>
     <button type="button" class="btn btn-default">
-      <%= link_to "Delete", user_restaurant_path(@user.id, restaurant), method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
+      <%= link_to "Delete", user_restaurant_path(@user.id, restaurant), method: :delete, remote: true %>
     </button>
   </p>
 <% end %>
