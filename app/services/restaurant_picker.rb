@@ -1,10 +1,7 @@
 class RestaurantPicker
 
   def choose(restaurants)
-    picks = restaurants
-      .sort_by { |restaurant| restaurant.last_visit }
-      .select  { |restaurant| restaurant if qualified(restaurant) }
-    picks.sample
+    restaurants.select { |restaurant| restaurant if qualified(restaurant) }.sample
   end
 
   private
